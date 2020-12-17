@@ -1,0 +1,26 @@
+<div class="col-md-4">
+	<div class="fb-timeline-widget">                    
+		 <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fthemeix&tabs=timeline&width=340&height=500&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId=1085975151420897" width="340" height="500" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe>						   
+	</div>
+	<div class="sidebar-widget pt-45">
+		<div class="primary-heading">
+			<h4>Categories</h4>
+			<span class="box"></span>
+		</div>
+		<div class="categories-list">
+			<ul>
+			   {{#get "tags" limit="8" as |tag_info| }}
+				{{#foreach tag_info}}
+				 <li><a href="{{url}}">{{name}}</a></li>
+				{{/foreach}}
+			   {{/get}}
+			</ul>
+		</div>
+	</div>
+	<div class="sidebar-widget pt-45">
+		<div class="themeix-sidebar-ads">
+		   {{> 'ads/ads_medium_banner' }}	
+		</div>
+	</div>
+
+</div>

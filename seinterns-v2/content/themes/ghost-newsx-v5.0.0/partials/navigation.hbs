@@ -1,0 +1,17 @@
+ 
+<nav class="navbar navbar-expand-lg">
+<div class="navbar-header visible-xs"> 
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#topmenu">
+    <i class="fa fa-bars"></i>
+  </button>
+  
+</div>
+
+<div class="collapse navbar-collapse" id="topmenu">
+  <ul class="navbar-nav mr-auto">
+    {{#foreach navigation}}
+      <li class="nav-item {{#if current}}nav-current{{/if}}"><a href="{{url}}" class="nav_link">{{label}}</a></li>
+    {{/foreach}}
+  </ul>
+</div>
+</nav>

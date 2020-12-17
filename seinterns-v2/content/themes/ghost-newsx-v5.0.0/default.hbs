@@ -1,0 +1,43 @@
+<!doctype html>
+<html class="no-js" lang="{{@site.lang}}">
+   <head>
+      <meta charset="utf-8">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      <!-- Site Title -->
+      <title>{{meta_title}}</title>
+      <meta name="HandheldFriendly" content="True" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link href="https://fonts.googleapis.com/css?family=Poppins:400,600,700" rel="stylesheet">
+      <!-- Newsx Minify CSS -->
+      <link rel="stylesheet" href="{{asset "css/app.min.css"}}" type="text/css">
+      {{ghost_head}}
+
+<script>
+// 01.	Instagram Feed Settings
+var instagram_feed_image_limit = 6;
+var instagram_feed_user_accessToken = 'add_your_access_token';
+if(typeof site_url === "undefined"){
+   var site_url = '{{@site.url}}';
+} 
+if(typeof(Storage) !== 'undefined') {
+      if (localStorage.getItem('selected-theme') == 'light' || document.documentElement.getAttribute('data-theme') == 'light') {
+document.getElementById('switch_theme').checked = true;
+      }		
+      }	
+</script>
+
+   </head>
+   <body class="{{body_class}}">
+      {{> 'header'}}
+      {{{body}}}
+      {{> 'footer'}}
+      <div class="day-night-switch">
+         <input type="checkbox" name="theme-toggle" id="switch_theme" class="theme-toggle">
+         <label for="switch_theme" class="theme-toggle-label fade-in">Toggle Theme</label>        
+      </div>
+      <!-- Newsx Minify JS -->
+      <script src="{{asset "js/build.min.js"}}"></script>
+     
+      {{ghost_foot}}
+   </body>
+</html>

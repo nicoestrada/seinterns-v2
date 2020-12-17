@@ -1,0 +1,44 @@
+{{!< default}}
+<div class="custom-author-page section-ptb">
+   <div class="container">
+      <div class="row">
+         <div class="col-md-12">
+            <div class="page-title-heading primary-heading">
+               {{#post}}
+               <h4>{{title}}</h4>
+               <p>{{content}}</p>
+               {{/post}}
+            </div>
+         </div>
+         {{#get "authors"}}
+         {{#foreach authors}}
+         <div class="col-lg-4 col-sm-6 mb-30 pb-2">
+            <div class="team-card-style-3 mx-auto">
+               <a href="{{url}}">
+                  <div class="team-thumb"><img src="{{img_url profile_image}}" alt="{{name}}">
+                  </div>
+               </a>
+               <a href="{{url}}">
+                  <h4 class="team-name">{{name}}</h4>
+               </a>
+               {{#if bio}}{{bio}}{{/if}}
+               <div class="team-social-bar-wrap">
+                  <div class="team-social-bar">
+                     {{#if twitter}}         <a class="social-btn sb-style-1 sb-twitter" href="{{twitter_url}}">
+                     <i class="fa fa-twitter"></i>
+                     </a>{{/if}}
+                     {{#if facebook}}            <a class="social-btn sb-style-1 sb-github" href="{{facebook}}">
+                     <i class="fa fa-facebook"></i>
+                     </a>{{/if}}
+                     {{#if website}}              <a class="social-btn sb-style-1 sb-stackoverflow" href="{{website}}">
+                     <i class="fa fa-link"></i>
+                     </a>{{/if}}
+                  </div>
+               </div>
+            </div>
+         </div>
+         {{/foreach}}
+         {{/get}}
+      </div>
+   </div>
+</div>

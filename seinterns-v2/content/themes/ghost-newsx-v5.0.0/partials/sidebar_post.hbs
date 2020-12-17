@@ -1,0 +1,52 @@
+  <div class="single-post-sidebar">
+<div class="row p-0"> 
+<div class="col-md-6 col-lg-12"> 
+<div class="sidebar-widget">
+  {{> 'recent_post'}}
+</div>
+</div>
+ 
+<div class="col-md-6 col-lg-12"> 
+<div class="sidebar-widget pt-45">
+    <div class="primary-heading">
+        <h4>Categories</h4>
+        <span class="box"></span>
+    </div>
+    <div class="categories-list">
+        <ul>
+           {{#get "tags" limit="8" as |tag_info| }}
+            {{#foreach tag_info}}
+             <li><a href="{{url}}">{{name}}</a></li>
+            {{/foreach}}
+           {{/get}}
+        </ul>
+    </div>
+</div>
+
+	<div class="sidebar-widget pt-45">
+     <div class="primary-heading">
+        <h4>Instragram Gallery</h4>
+        <span class="box"></span>
+    </div>   
+		<div class="themeix-instagram">		   
+  <div id="instafeed" class="grid-gallery">
+
+</div>	
+		</div>
+	</div>
+
+</div>
+<div class="col-md-6 col-lg-12"> 
+<div class="sidebar-widget pt-45">
+	<div class="themeix-sidebar-ads">
+ {{> 'ads/ads_medium_banner' }}			
+	</div>
+  </div>
+ </div>
+</div>
+
+</div>
+
+
+
+ 

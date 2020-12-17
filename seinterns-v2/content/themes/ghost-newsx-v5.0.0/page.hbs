@@ -1,0 +1,25 @@
+{{!< default}}
+<div class="themeix-page-container section-ptb">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                {{#post}}
+                <div class="top-news-img post-details">
+                    {{#if feature_image}}
+                    <div class="img-section">
+                        <img src="{{img_url feature_image}}" alt="{{title}}" />
+                    </div>
+                    {{/if}}
+                    <div class="embeded-video"></div>
+                </div>
+                <div class="page-title-heading primary-heading">
+                    <h4>{{title}}</h4>
+                </div>
+                <div class="post-details">
+                    {{content}}
+                </div>
+                {{/post}}
+            </div>
+        </div>
+    </div>
+</div>

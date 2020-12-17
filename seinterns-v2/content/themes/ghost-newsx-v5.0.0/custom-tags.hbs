@@ -1,0 +1,40 @@
+{{!< default}}
+<div class="custom-tag-page section-ptb">
+   <div class="container">
+      <div class="row">
+         <div class="col-md-12">
+            <div class="page-title-heading primary-heading">
+               {{#post}}
+               <h4>{{title}}</h4>
+               <p>{{content}}</p>
+               {{/post}}
+            </div>
+         </div>
+        {{#get 'tags' limit='all' include='count.posts' order='count.posts desc'}}
+         <div class="card-columns">
+         {{#foreach tags}}
+        
+            <div class="card tag-card-block  mb-4" >
+               {{#if feature_image }}
+               <img src="{{img_url feature_image }}" class="card-img-top" alt="...">
+               {{/if}}
+               <div class="card-body">
+                  <a href="{{url}}">
+                     <h5 class="card-title">{{ name }}  </h5>
+                  </a>
+                  <p class="card-text"><small class="text-muted">{{t "A collection of"}}   {{ count.posts }} {{t "Posts"}} </small></p>
+                  {{#if description}}
+                  <p class="card-text">{{description}}</p>
+                  {{/if}}
+               </div>
+               <div class="card-footer">
+                  <a href="{{url}}" class="card-link">{{t "View All"}} {{ count.posts }} {{t "Posts"}}</a>
+               </div>
+            </div>
+      
+         {{/foreach}}
+         </div>
+         {{/get}}
+      </div>
+   </div>
+</div>

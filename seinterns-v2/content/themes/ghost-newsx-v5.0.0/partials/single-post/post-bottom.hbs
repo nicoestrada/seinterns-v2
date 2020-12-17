@@ -1,0 +1,45 @@
+            <div class="middle-section">
+               <div class="row">
+                  <div class="col-md-12">
+                     <div class="left-link-item">
+                        <ul>
+                           {{#if tags}} {{#foreach tags}}
+                           <li>
+                              <a href="{{url}}" title="{{name}}" class="tag {{slug}}">{{name}}</a>
+                           </li>
+                           {{/foreach}} {{/if}}
+                        </ul>
+                     </div>
+                  </div>
+                  <div class="col-md-12">
+                     <div class="share-icon">
+                        <span>{{t "Share this"}}</span>
+                        <ul class="social-icon">
+                           <li>
+                              <a href="http://twitter.com/share?text={{encode title}}&amp;url={{url absolute=" true "}}"
+                              onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;"
+                              class="twitter"><i class="fa fa-twitter"></i></a>
+                           </li>
+                           <li>
+                              <a href="https://www.facebook.com/sharer/sharer.php?u={{url absolute=" true "}}"
+                              onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;"
+                              class="facebook"><i class="fa fa-facebook-f"></i></a>
+                           </li>
+                        </ul>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="previou-next-article">
+               {{#prev_post}}
+               <div class="left-previou">
+                  <a href="{{url}}"><i class="fa fa-angle-left"></i> {{t "Previous Article"}}</a>
+                  <p><a class="post-link" href="{{url}}">{{title}}</a></p>
+               </div>
+               {{/prev_post}} {{#next_post}}
+               <div class="next-artical">
+                  <a href="{{url}}">{{t "Next Article"}} <i class="fa fa-angle-right"></i></a>
+                  <p><a class="post-link" href="{{url}}">{{title}}</a></p>
+               </div>
+               {{/next_post}}
+            </div>

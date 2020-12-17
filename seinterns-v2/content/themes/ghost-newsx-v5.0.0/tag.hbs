@@ -1,0 +1,38 @@
+{{!< default}} 
+<div class="main-news-slider section-ptb-3">
+   <div class="container">
+      <div class="row">
+         <div class="col-lg-8">
+            <div class="row">
+               <div class="col-md-12">
+                  <div class="primary-heading">
+                     {{#tag}}
+                     <h4>{{name}}</h4>
+                     <span class="box">{{t "A collection of"}}  {{plural ../pagination.total empty='posts' singular='% post' plural='% posts'}}</span> 
+                     {{/tag}}
+                  </div>
+               </div>
+            </div>
+            <div class="news-photo-gallery bg-none paddin-left-right-0">
+               <div class="row">
+                  {{#foreach posts limit="6"}}
+                  <div class="col-sm-6">
+                     <div class="photo-gallery-single margin-none">
+                        <div class="post-image height-240" style="{{#if feature_image }} background-image:url({{img_url feature_image}}); {{else}} background-image:url(/assets/images/default-img.png); {{/if}}">
+                        </div>
+                        <div class="photo-gallery-content paddin-none">
+                           <h3 class="entry-title"><a href="{{url}}">{{title}}</a></h3>
+                           {{excerpt words="15"}}
+                        </div>
+                     </div>
+                  </div>
+                  {{/foreach}}
+               </div>
+            </div>
+         </div>
+         <div class="col-lg-4">          
+            {{> 'sidebar_post'}}
+         </div>
+      </div>
+   </div>
+</div>

@@ -1,0 +1,11 @@
+<h3>{{t "You may like our posts :"}} </h3>
+
+{{#get "posts" limit="10" order="published_at asc"}}
+<ul>
+   {{#foreach posts}}
+
+		<li><a href="{{url}}">{{title}}</a> </li>
+
+	{{/foreach}}
+</ul>
+  {{/get}}

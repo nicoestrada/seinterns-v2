@@ -1,0 +1,110 @@
+<!-- Start Footer -->
+<footer class="clearfix">
+    <div class="footer-area">
+        <div class="footer-overlay  section-ptb">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-3 col-md-6">
+                        <div class="footer-widget clearfix">
+
+                            <div class="logo-area footer-logo wow fadeInUp" data-wow-delay="0.2s">
+                                <a href="{{@site.url}}"><img src="{{#if @site.logo}} {{@site.logo}} {{else}} {{asset "images/logo.png"}} {{/if}}" alt="{{@site.title}}"></a>
+                            </div>
+
+                            <p class="about wow fadeInUp" data-wow-delay="0.4s">{{t "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout."}}</p>
+
+                            <div class="footer-social wow fadeInUp" data-wow-delay="0.6s">
+                                <a class="facebook" href="#"><i class="fa fa-facebook"></i></a>
+                                <a  class="linkedin" href="#"><i class="fa fa fa-linkedin"></i></a>
+                                <a  class="twitter" href="#"><i class="fa fa-twitter"></i></a>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="footer-widget wow fadeInUp clearfix" data-wow-delay="0.2s">
+                            <div class="footer-title">
+                                <h4>{{t "Latest Posts"}}</h4>
+                            </div>
+                            <div class="footer-content">
+                                {{#get "posts" limit="4" as |recent_posts| }} {{#foreach recent_posts}}
+                                  <div class="footer-post">
+ 
+                                    <div class="footer-post-text">
+                                        <a href="{{url}}">{{title}}</a>
+                                    </div>
+                                  </div>
+                                {{/foreach}} 
+                             {{/get}}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="footer-widget clearfix">
+                            <div class="footer-widget wow fadeInUp" data-wow-delay="0.4s">
+                                <div class="footer-title">
+                                    <h4>{{t "Important Link"}}</h4>
+                                </div>
+                                <div class="footer-content">
+                                    <div class="footer-link-widget">
+                                         <ul >
+                                              <li ><a href="#">Terms of Srvice </a></li>
+                                              <li ><a href="#">Advertising </a></li>
+                                             <li  ><a href="#">Privacy Policy</a></li>
+                                             <li  ><a href="#">Content Policy</a></li>
+                                             <li  ><a href="#">Contact Us</a></li>
+                                            
+                                         </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="footer-widget clearfix wow fadeInUp" data-wow-delay="0.6s">
+                            <div class="footer-title">
+                                <h4>{{t "Subscribe Now"}}</h4>
+                            </div>
+                            <div class="footer-content">
+							   {{#if @labs.subscribers}}
+                               {{subscribe_form form_class="" input_class="form-control footer-subs-input" button_class="subscribe-btn" placeholder="Your Email"}} 
+                               {{else}}
+                                <form action="/subscribe/">
+                                    <div class="form-group">
+                                        <input class="form-control footer-subs-input" type="email" placeholder="{{t "Your email"}}" required>
+                                    </div>
+                                    <div class="form-group custom-input">
+                                        <div class="themeix-button custom-btns">
+                                            <button type="submit" class="subscribe-btn">{{t "Subscribe Now"}}</button>
+                                        </div>
+                                        <p >{{t "We will never do spam with you!"}}</p>
+                                    </div>
+                                </form>
+                                {{/if}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="bottom-footer">
+            <div class="container">
+                <div class="row">
+                   <div class="col-md-12"> 
+                     <div class="themeix-copyright text-center">					   
+                        <span>© {{date format="Y"}} <a href="{{@site.url}}">{{@site.title}} </a> | {{t "Made with"}} <i class="fa fa-heart"></i> {{t "by"}} <a href="http://themeix.com">{{t "Themeix"}}</a> | {{t "Published with"}} <a href="https://ghost.org">{{t "Ghost"}}</a></span>
+                     </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- scrollUp -->
+<div class="scroll-top">
+    <div class="scroll-icon">
+        <i class="fa fa-angle-up"></i>
+    </div>
+</div>
+<!--End scrollUp -->
+<!-- End Footer -->

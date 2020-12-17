@@ -1,0 +1,93 @@
+<!-- start content with sidebar -->
+<div class="content-with-sidebar pb-75">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8">
+        {{#get "posts" filter="tag:sports" include="authors,tags"}}
+        {{#if posts.length}}
+        <div class="row">
+          <div class="col-sm-12">
+            <div class="primary-heading sports-heading">
+              <h4>{{t "Sports News"}}</h4>
+              <span class="box"></span>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="photo-gallery-single boxx-shadow">
+
+              {{#foreach posts}}
+              {{#if @first}}
+              <div class="sports-post-wrapper post-excerpt">
+                <div class="post-image">
+                  {{#primary_tag}}
+                  <a class="tag-name" href="{{url}}">{{name}}</a>
+                  {{/primary_tag}}
+                  <div class="medium-post-thumb" style="background-image:url({{img_url feature_image}});"></div>
+                  
+                </div>
+                <div class="photo-gallery-content">
+                  <h3 class="custom-head-change"><a href="{{url}}">{{title}}</a></h3>
+                  <p>{{excerpt words="18"}}</p>
+                </div>
+              </div>
+              {{/if}}
+              {{/foreach}}
+
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="about-descrption">
+              <ul class="info sport-posts-list">
+                {{#get "posts" filter="tag:sports" include="authors,tags" limit="8"}}
+                {{#foreach posts}}
+                {{#unless @first}}
+                <li><a href="{{url}}">{{title}}</a></li>
+                {{/unless}}
+                {{/foreach}}
+                {{/get}}
+              </ul>
+            </div>
+          </div>
+        </div>
+        {{/if}}
+        {{/get}}
+        <!-- start recent-news -->
+        <div class="recent-news-area pt-30">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="recent-news-block">
+                <div class="primary-heading custom-change recent-news-heading">
+                  <h4>{{t "Recent Posts"}}</h4>
+                  <span class="box"></span>
+                </div>
+                <div class="recent-posts-wrapper post-excerpt">
+                  {{#get "posts" include="authors,tags" limit="6"}}
+                  {{#foreach posts}}
+                  <div class="recent-news">
+                    <div class="post-image recent-thumb">
+                      {{#primary_tag}}
+                      <a class="tag-name" href="{{url}}">{{name}}</a>
+                      {{/primary_tag}}
+                      {{#if feature_image}}
+                      <div class="recent-post-image" style="background-image: url({{img_url feature_image}});"></div>
+                      {{/if}}
+                    </div>
+                    <div class="recent-content">
+                      <h2><a href="{{url}}">{{title}}</a></h2>
+                      <p>{{excerpt words="15"}}</p>
+                    </div>
+                  </div>
+                  {{/foreach}}
+                  {{/get}}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- end recent news -->
+      </div>
+      {{> 'sidebar_home'}}
+    </div>
+  </div>
+</div>
+<!-- end content with sidebar -->

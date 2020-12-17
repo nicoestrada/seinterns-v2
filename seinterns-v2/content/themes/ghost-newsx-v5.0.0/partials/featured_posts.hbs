@@ -1,0 +1,59 @@
+<!-- start main-news-slider -->
+
+<div class="main-news-slider pt-75">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-7">
+                {{#get "posts" filter="featured:true" as |feature_posts|}} 
+                  {{#foreach feature_posts}} 
+                    {{#if @first}}
+                    <div class="top-news-img">
+                    <div class="img-section">
+                        <div class="large-post-thumb" style="{{#if feature_image}} background-image: url({{img_url feature_image}}); {{else}} background-image: url({{asset "images/default-img.png"}}); {{/if}}">
+                        </div>
+                    </div>
+                     
+                </div>
+                <div class="top-news">
+                    <h1><a href="{{url}}">{{title}}</a></h1> 
+                </div>
+                  {{/if}} 
+                 {{/foreach}} 
+                {{/get}}
+            </div>
+            <div class="col-md-5">
+                <div class="single-post-category sm-mt-70">
+                    <ul>
+                        {{#get "posts" filter="featured:true" limit="6" as |feature_list| }} 
+                          {{#foreach feature_list}} 
+                           {{#unless @first}}
+                            <li>
+                                <div class="single-post">
+                                    <div class="post-thumb">
+                                        <div class="small-post-thumb" style="{{#if feature_image }} background-image: url({{feature_image}}); {{else}} background-image: url({{asset "images/default-img.png"}}); {{/if}}"></div>
+                                        
+                                    </div>
+                                    <div class="item-post-content">
+                                        <h2><a href="{{url}}">{{title}}</a></h2>
+                                         <span>{{date format="D MMM YYYY"}}</span> 
+                                    </div>
+                                </div>
+                            </li>
+                          {{/unless}} 
+                         {{/foreach}} 
+                        {{/get}}
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+            <div class="row">
+         <div class="col-md-12 pb-5 pt-2">
+            <div class="add-image">
+               {{> 'ads/ads_big_banner'}}
+            </div>
+         </div>
+      </div>
+    </div>
+</div>
+<!-- end main-news-slider -->

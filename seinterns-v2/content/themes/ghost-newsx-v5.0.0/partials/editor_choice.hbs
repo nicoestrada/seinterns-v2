@@ -1,0 +1,41 @@
+ 
+
+{{#get "posts" filter="tag:editors" include="authors,tags" limit="5"}}
+{{#if posts.length}}
+<div class="latest-news pb-45">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="primary-heading section-heading-five">
+                    <h4>{{t "Editors Pick"}}</h4>
+                    <span class="box"></span>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="latest-news-active owl-carousel">
+                    {{#foreach posts}}
+                        <div class="item">
+                            <div class="photo-gallery-single">
+                                <div class="post-image">
+                                    {{#primary_tag}}
+                                    <a class="tag-name" href="{{url}}">{{name}}</a>
+                                    {{/primary_tag}}
+                                    <div class="medium-post-thumb"
+                                        style="background-image: url({{img_url feature_image}});"></div>
+                                   
+                                </div>
+                                <div class="photo-gallery-content"></div>
+                            </div>
+                        </div>
+                    {{/foreach}}
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{{/if}}
+{{/get}}
+ 

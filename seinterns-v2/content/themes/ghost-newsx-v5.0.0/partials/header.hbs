@@ -1,0 +1,60 @@
+<header>
+    <!-- End Top Bar -->
+    <div class="middle-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-4 site-logo-wrapper">
+                    <div class="site-logo">
+                        <a href="{{@site.url}}">
+                            <img src="{{#if @site.logo}} {{@site.logo}} {{else}} {{asset "images/logo.png"}} {{/if}}"
+                                alt="{{@site.title}}">
+                        </a>
+                    </div>
+                </div>
+                <div class="col-sm-8">
+                    <div class="leaderboard-ads text-right">
+                        <div class="header-add-area themeix-ads">
+                            {{> 'ads/ads_header_banner' }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End middle header -->
+    <div class="main-menu">
+        <!-- Start Navigation -->
+        <div class="header-section pin-style">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-9 nopadding navigation-cotnainer">
+                        {{navigation}}
+
+                        <div class="drop-card hidden-xs hidden-sm search-icon-div">
+                            <div class="search-btn">
+                                <button class="search-link" data-toggle="modal" data-target="#search-page"><i
+                                        class="fa fa-search"></i></button>
+                            </div>
+
+                        </div>
+
+                    </div>
+                    <div class="col-md-3">
+                        <ul class="member-subscribe-btn">
+                            {{#if @member}}
+                            <li><a class="account-link" href="/account/">Account</a></li>
+                            <li><a class="signout-link" href="#signout" data-members-signout>Log out</a></li>
+                            {{else}}
+                            <li><a class="signin-link" href="/signin/">Log in</a></li>
+                            <li><a class="sub-btn" href="/signup/">Subscribe</a></li>
+                            {{/if}}
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <!-- end navigation -->
+    </div>
+    {{> 'search-page'}}
+</header>

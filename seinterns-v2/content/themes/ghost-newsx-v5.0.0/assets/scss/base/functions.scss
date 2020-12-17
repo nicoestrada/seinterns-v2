@@ -1,0 +1,26 @@
+ 
+// Responsive Layout
+
+@mixin desktop {
+  @media (min-width: #{$laptop-device}) and (max-width: #{$desktop-device}) {
+    @content;
+  }
+}
+
+@mixin laptop {
+  @media (min-width: #{$tablet-device}) and (max-width: #{$laptop-device}) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (max-width: #{$tablet-device}) {
+    @content;
+  }
+}
+
+@mixin mobile {
+  @media (max-width: #{$mobile-device}) {
+    @content;
+  }
+}

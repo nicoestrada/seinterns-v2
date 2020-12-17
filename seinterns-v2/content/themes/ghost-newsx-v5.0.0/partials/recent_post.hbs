@@ -1,0 +1,20 @@
+<div class="primary-heading sidebar-heading-one">
+    <h4>{{t "Recent Posts"}}</h4>
+    <span class="box"></span>
+</div>
+<ul class="most-popular-wrapper">
+ {{#get "posts" include="authors,posts" limit="5"}}
+   {{#foreach posts}}
+	  <li>
+	    <div class="single-post">
+	        <div class="post-thumb">
+	            <div class="small-post-thumb" style="background-image:url({{img_url feature_image}});"></div>
+	            
+	        </div>
+	        <div class="item-post-content">
+	        <h2><a href="{{url}}">{{title}}</a></h2> </div>
+	    </div>
+	  </li>
+  {{/foreach}}
+ {{/get}}
+</ul>

@@ -1,0 +1,36 @@
+{{#get "posts" limit="6" filter="tags:[{{post.tags}}]+id:-{{post.id}}" include="tags" as |related|}}
+{{#if posts.length}}
+<div class="news-photo-gallery">
+
+      <div class="row">
+         <div class="col">
+            <div class="gallery-heading">
+               <div class="primary-heading">
+                  <h4>{{t "Related Posts"}}</h4>
+                  <span class="box"></span>
+               </div>
+            </div>
+         </div>
+
+   </div>
+
+      <div class="row gallery-post-wrapper">
+         {{#foreach posts}}
+         <div class="col-md-4 col-sm-6">
+            <div class="photo-gallery-single">
+               <div class="post-image">
+                  {{#primary_tag}}
+                  <a class="tag-name green-color" href="{{url}}">{{name}}</a>
+                  {{/primary_tag}}
+                  <div class="medium-post-thumb" style="background-image:url({{img_url feature_image}});"></div>
+                  
+               </div>
+            </div>
+         </div>
+         {{/foreach}}
+      </div>
+
+</div>
+{{/if}}
+
+{{/get}}
